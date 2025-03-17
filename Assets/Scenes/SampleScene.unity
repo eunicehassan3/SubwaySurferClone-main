@@ -1138,6 +1138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  acceleration: 0
 --- !u!1001 &1857933626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1401,6 +1402,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 676184821412505536, guid: 262b1669d3aa948748a7acbaada1bdf4, type: 3}
+      propertyPath: acceleration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1550761276557313310, guid: 262b1669d3aa948748a7acbaada1bdf4, type: 3}
       propertyPath: m_IsActive
       value: 1
