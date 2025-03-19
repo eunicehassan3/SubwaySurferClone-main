@@ -10,14 +10,12 @@ public class TriggerSection : MonoBehaviour
     
    private void OnTriggerEnter(Collider other){
     if(other.gameObject.tag == "Trigger"){
-        float triggerPos = other.gameObject.transform.position.z + 100;
-        Instantiate(trainPrefab, new Vector3(0,0, triggerPos), Quaternion.identity);
-        offset = 0;
+        Instantiate(trainPrefab, new Vector3(0,0, 120), Quaternion.identity);
         for(int i = 1; i <= roadLength; i++){
             int luckyNum = Random.Range(0, backgroundPrefabs.Length);
             int luckyNum2 = Random.Range(0, backgroundPrefabs.Length);
-            Instantiate(backgroundPrefabs[luckyNum], new Vector3(-20,0, triggerPos + offset), Quaternion.identity);
-            Instantiate(backgroundPrefabs[luckyNum2], new Vector3(20,0, triggerPos + offset), Quaternion.identity);
+            Instantiate(backgroundPrefabs[luckyNum], new Vector3(-20,0, 120 + offset), Quaternion.identity);
+            Instantiate(backgroundPrefabs[luckyNum2], new Vector3(20,0, 120 + offset), Quaternion.identity);
             offset += 20;
             }
             offset = 0;
