@@ -5,14 +5,14 @@ public class BackgroundBehavior : MonoBehaviour
     public float speed;
     public float acceleration; 
     private float currentSpeed;
-    // public float initialSpeed = 2f; 
+
     public float maxSpeed = 20f; 
-    public float accelerationTime = 500f;
-    // private static float elapsedTime = 0f;
+    public float accelerationTime = 200;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        speed = 2;
+        speed = 5;
         currentSpeed = speed;
         
     }
@@ -24,9 +24,8 @@ public class BackgroundBehavior : MonoBehaviour
         float elapsedTime = Time.timeSinceLevelLoad;
         currentSpeed = Mathf.Lerp(speed, maxSpeed, elapsedTime / accelerationTime); 
         transform.position -= Vector3.forward.normalized * currentSpeed * Time.deltaTime; 
-        // currentSpeed += acceleration * Time.deltaTime;
-        // transform.Translate(-transform.forward * currentSpeed * Time.deltaTime);
-        Debug.Log("Current Speed" +  currentSpeed);
+       
+        // Debug.Log("Current Speed" +  currentSpeed);
     }
 
 

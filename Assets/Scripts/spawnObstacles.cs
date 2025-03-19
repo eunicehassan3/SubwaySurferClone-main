@@ -7,12 +7,14 @@ using System.Collections;
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     public GameObject[] obstacles;
+    public float spawnZ = 50;
+    public float offset = 20;
     
 
     void Start()
     {
         spawnObstacles2();
-        // StartCoroutine(SpawnRoutine());
+        //  StartCoroutine(SpawnRoutine());
     }
 
     void Update()
@@ -24,8 +26,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         while (true)
         {
+            spawnZ += offset;
             spawnObstacles2();
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(15);
         }
     }
 
@@ -51,9 +54,16 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // }
 
     private void spawnObstacles2(){
-        GameObject obstacle = obstacles[Random.Range(0, obstacles.Length)];
-        Vector3 pos = new Vector3(0,2.6f,60);
-        Instantiate(obstacle, pos, Quaternion.identity);
+        GameObject obstacle1 = obstacles[Random.Range(0, obstacles.Length)];
+        GameObject obstacle2 = obstacles[Random.Range(0, obstacles.Length)];
+        GameObject obstacle3 = obstacles[Random.Range(0, obstacles.Length)];
+        
+        Vector3 posM = new Vector3(0,2.6f,spawnZ);
+        Vector3 posL = new Vector3(-7,2.6f,spawnZ);
+        Vector3 posR = new Vector3(7,2.6f,spawnZ);
+        Instantiate(obstacle1, posM, obstacle1.transform.rotation);
+        Instantiate(obstacle2, posL, obstacle2.transform.rotation);
+        Instantiate(obstacle3, posR, obstacle3.transform.rotation);
         
     }
    

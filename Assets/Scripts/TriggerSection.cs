@@ -10,7 +10,7 @@ public class TriggerSection : MonoBehaviour
     
    private void OnTriggerEnter(Collider other){
     if(other.gameObject.tag == "Trigger"){
-        Instantiate(trainPrefab, new Vector3(0,0, 60f), Quaternion.identity);
+        Instantiate(trainPrefab, new Vector3(0,0, 60), Quaternion.identity);
         for(int i = 1; i <= roadLength; i++){
             int luckyNum = Random.Range(0, backgroundPrefabs.Length);
             int luckyNum2 = Random.Range(0, backgroundPrefabs.Length);
