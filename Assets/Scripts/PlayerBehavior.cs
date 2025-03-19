@@ -26,7 +26,7 @@ public class PlayerBehavior : MonoBehaviour
         // transform.Translate(transform.forward * speed * Time.deltaTime);
 
         if(Input.GetKeyDown(KeyCode.LeftArrow)){
-            gameObject.transform.position = transform.position + new Vector3(-6.3f,0,0);
+            gameObject.transform.position = transform.position + new Vector3(-7f,0,0);
         }
         if(Input.GetKeyDown(KeyCode.RightArrow)){
             gameObject.transform.position = transform.position + new Vector3(7,0,0);
