@@ -23,6 +23,7 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // transform.Translate(transform.forward * speed * Time.deltaTime);
 
         if(Input.GetKeyDown(KeyCode.LeftArrow)){
@@ -40,6 +41,13 @@ public class PlayerBehavior : MonoBehaviour
             
         }
 
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Train"){
+        Debug.Log("Game Over");
+    }
     }
 
     float CalculateJumpForce(float height, float gravity, float mass)

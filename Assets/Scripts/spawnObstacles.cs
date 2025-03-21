@@ -8,13 +8,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
 {
     public GameObject[] obstacles;
     public float spawnZ = 50;
-    public float offset = 20;
+    public float offset = 10;
     
 
     void Start()
     {
-        spawnObstacles2();
-        //  StartCoroutine(SpawnRoutine());
+        // spawnObstacles2();
+        StartCoroutine(SpawnRoutine());
     }
 
     void Update()
@@ -26,9 +26,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         while (true)
         {
-            spawnZ += offset;
+            // spawnZ += offset;
             spawnObstacles2();
-            yield return new WaitForSeconds(15);
+            yield return new WaitForSeconds(4);
         }
     }
 
