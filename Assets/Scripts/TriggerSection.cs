@@ -19,8 +19,8 @@ public class TriggerSection : MonoBehaviour
     // float startPos = startObject.transform.position.z;
     if(other.gameObject.tag == "Trigger"){
         // Instantiate(trainPrefab, new Vector3(0,0, 206), Quaternion.identity);
-        Instantiate(trainPrefab, new Vector3(17.0519f,5.521738f, 100 ), Quaternion.identity);
-        // for(int i = 1; i <= roadLength; i++){
+        Instantiate(trainPrefab, new Vector3(17.0519f,5.521738f, other.transform.position.z +290 ), Quaternion.identity);
+        // for(int i = 1; i <= roadLength; i++){3
         //     int luckyNum = Random.Range(0, backgroundPrefabs.Length);
         //     int luckyNum2 = Random.Range(0, backgroundPrefabs.Length);
         //     Instantiate(backgroundPrefabs[luckyNum], new Vector3(-20,0, start + offset), Quaternion.identity);
